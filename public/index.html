@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daur Ulang · Belajar memilah, belanja kerajinan dari sampah</title>
+  <meta name="description" content="Belajar memilah dan mendaur ulang sampah, lalu belanja kerajinan tangan dari sampah. Mendukung SDG 3.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Lewati ke konten</a>
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="/" aria-label="Daur Ulang, beranda"><img src="/favicon.svg" alt="" width="26" height="26"> Daur Ulang</a>
+      <nav aria-label="Utama">
+        <a href="/" aria-current="page">Beranda</a>
+        <a href="/edukasi">Edukasi</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/toko">Toko</a>
+      </nav>
+      
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <span class="eyebrow">Putih · Hijau · Bersih</span>
+      <h1>Sampah masih punya kehidupan kedua.</h1>
+      <p class="lead">Pelajari cara memilah sampah di rumah, pahami dampaknya lewat data, lalu bawa pulang kerajinan tangan yang dibuat dari sampah itu sendiri.</p>
+      <div class="actions">
+        <a class="btn" href="/edukasi">Mulai belajar</a>
+        <a class="btn btn--ghost" href="/dashboard">Lihat data</a>
+        <a class="btn btn--ghost" href="/toko">Kunjungi toko</a>
+      </div>
+    </section>
+
+    <section class="section--tint section">
+      <div class="wrap kpis">
+        <div><div class="stat">32,8 jt ton</div><p class="stat-label">timbulan sampah nasional 2024</p></div>
+        <div><div class="stat">39,43%</div><p class="stat-label">di antaranya sisa makanan</p></div>
+        <div><div class="stat">19,54%</div><p class="stat-label">berupa sampah plastik</p></div>
+        <div><div class="stat">50,8%</div><p class="stat-label">berasal dari rumah tangga</p></div>
+      </div>
+      <p class="wrap src">Sumber: SIPSN KLH, laporan 303 kabupaten/kota (2024). <a href="/dashboard">Lihat dashboard lengkap</a></p>
+    </section>
+
+    <section class="section wrap" id="belajar" aria-labelledby="h-belajar">
+      <div class="head">
+        <h2 id="h-belajar">Pilah dari rumah</h2>
+        <p>Pilih jenis sampah untuk melihat contoh, cara menyiapkannya, dan bisa jadi apa.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Jenis sampah" id="tabs"></div>
+      <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+    </section>
+
+    <section class="section wrap">
+      <div class="cta">
+        <div><h2>Belanja kerajinan dari sampah</h2><p>Tas, pot, lampu, dan lainnya. Dibuat tangan dari bahan bekas.</p></div>
+        <a class="btn" href="/toko">Buka toko</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <p>Daur Ulang · Prototipe edukasi dan toko kerajinan.</p>
+      <p>Mendukung SDG 3: Kehidupan Sehat dan Sejahtera.</p>
+    </div>
+  </footer>
+  <script src="/js/app.js" defer></script>
+</body>
+</html>

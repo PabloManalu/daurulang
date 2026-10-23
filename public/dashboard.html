@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard · Data sampah Indonesia</title>
+  <meta name="description" content="Dashboard komposisi sampah nasional 2024 menurut jenis dan sumber, berdasarkan data SIPSN.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Lewati ke konten</a>
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="/" aria-label="Daur Ulang, beranda"><img src="/favicon.svg" alt="" width="26" height="26"> Daur Ulang</a>
+      <nav aria-label="Utama">
+        <a href="/">Beranda</a>
+        <a href="/edukasi">Edukasi</a>
+        <a href="/dashboard" aria-current="page">Dashboard</a>
+        <a href="/toko">Toko</a>
+      </nav>
+      
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero hero--sm wrap">
+      <span class="eyebrow">Dashboard</span>
+      <h1>Data sampah Indonesia, satu layar.</h1>
+      <p class="lead">Komposisi sampah nasional 2024 menurut jenis dan sumber. Sentuh atau arahkan kursor ke baris untuk melihat detail.</p>
+    </section>
+
+    <section class="wrap" aria-label="Ringkasan" style="padding-bottom:2rem">
+      <div class="kpis" id="kpis"></div>
+    </section>
+
+    <section class="wrap" style="padding-bottom:3rem" aria-label="Grafik">
+      <div class="dash">
+        <div class="box">
+          <h3>Komposisi menurut jenis</h3>
+          <div class="donut-wrap"><div class="donut" id="donut" role="img" aria-label="Diagram donat komposisi sampah menurut jenis"></div><ul class="legend" id="legend"></ul></div>
+        </div>
+        <div class="box">
+          <h3>Sumber sampah</h3>
+          <ul class="bars" id="sources"></ul>
+        </div>
+        <div class="box box--tint full">
+          <h3>Apa artinya?</h3>
+          <p id="insight"></p>
+        </div>
+        <div class="box full">
+          <h3>Tabel data</h3>
+          <div class="tbl-wrap"><table class="tbl" id="tbl"></table></div>
+        </div>
+      </div>
+      <p class="src">Sumber: SIPSN, Kementerian Lingkungan Hidup (sipsn.kemenlh.go.id), data 2024 dari 303 kabupaten/kota yang melapor, sebagaimana dikutip ANTARA. Komposisi sumber dikutip dari GoodStats (data SIPSN 2024). Cakupan pelaporan berubah tiap tahun dan angka bisa direvisi, jadi bandingkan antar tahun dengan hati-hati. Kategori "lainnya" dihitung sebagai sisa dari 100%.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <p>Daur Ulang · Prototipe edukasi dan toko kerajinan.</p>
+      <p>Mendukung SDG 3: Kehidupan Sehat dan Sejahtera.</p>
+    </div>
+  </footer>
+  <script src="/js/dashboard.js" defer></script>
+</body>
+</html>

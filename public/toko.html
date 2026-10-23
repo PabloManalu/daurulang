@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toko · Daur Ulang</title>
+  <meta name="description" content="Kerajinan tangan dari sampah: tas, pot, lampu, dompet, keranjang, dan tempat pensil.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Lewati ke konten</a>
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="/" aria-label="Daur Ulang, beranda"><img src="/favicon.svg" alt="" width="26" height="26"> Daur Ulang</a>
+      <nav aria-label="Utama">
+        <a href="/">Beranda</a>
+        <a href="/edukasi">Edukasi</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/toko" aria-current="page">Toko</a>
+      </nav>
+      <button class="btn btn--ghost" id="openCart" type="button">Keranjang <span class="count" id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero hero--sm wrap">
+      <span class="eyebrow">Toko</span>
+      <h1>Kerajinan dari sampah, dibuat tangan.</h1>
+      <p class="lead">Setiap pembelian memberi bahan bekas umur panjang. Ini prototipe toko: pesanan tersimpan, tetapi belum ada pembayaran.</p>
+    </section>
+    <section class="wrap">
+      <div class="shop-strip">
+        <div class="box box--tint"><h3>Bahan bekas</h3><p>Plastik, kaca, kertas, logam, dan kemasan.</p></div>
+        <div class="box box--tint"><h3>Dibuat tangan</h3><p>Setiap produk dikerjakan satu per satu.</p></div>
+        <div class="box box--tint"><h3>Harga jelas</h3><p>Total dihitung ulang di server saat memesan.</p></div>
+      </div>
+    </section>
+    <section class="section wrap" style="padding-top:0" aria-labelledby="h-toko">
+      <div class="head"><h2 id="h-toko">Semua produk</h2><p>Pilih produk, masukkan ke keranjang, lalu kirim pesanan.</p></div>
+      <div class="grid" id="products" aria-live="polite"><p class="note">Memuat produk…</p></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <p>Daur Ulang · Prototipe edukasi dan toko kerajinan.</p>
+      <p>Mendukung SDG 3: Kehidupan Sehat dan Sejahtera.</p>
+    </div>
+  </footer>
+  <dialog id="cart" aria-labelledby="cartTitle">
+    <div class="cart__head">
+      <h2 id="cartTitle">Keranjang</h2>
+      <button class="btn btn--ghost" id="closeCart" type="button">Tutup</button>
+    </div>
+    <ul class="lines" id="lines"></ul>
+    <p class="total" id="total"></p>
+    <form id="checkout" novalidate>
+      <label>Nama <input name="name" autocomplete="name" required maxlength="100"></label>
+      <label>Nomor telepon <input name="phone" type="tel" autocomplete="tel" required inputmode="tel" maxlength="20"></label>
+      <label>Alamat lengkap <textarea name="address" rows="3" autocomplete="street-address" required maxlength="300"></textarea></label>
+      <p class="msg" id="msg" role="status"></p>
+      <button class="btn" id="submit" type="submit">Kirim pesanan</button>
+    </form>
+  </dialog>
+
+  <script src="/js/app.js" defer></script>
+</body>
+</html>

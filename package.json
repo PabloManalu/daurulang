@@ -1,0 +1,11 @@
+{
+  "name": "daurulang",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Edukasi daur ulang sampah dan toko kerajinan hasil daur ulang (SDG 3)",
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4"
+  },
+  "engines": { "node": ">=20" }
+}
