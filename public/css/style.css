@@ -167,3 +167,6 @@ input:focus-visible, textarea:focus-visible { outline-offset: 1px; }
   .bars li { grid-template-columns: 7rem 1fr 3.4rem; }
 }
 @media (max-width: 480px) { .dash, .kpis { grid-template-columns: 1fr; } }
+
+/*tambahan margin di atas card  */
+.hero--sm + section { margin-top: 2.5rem; }
