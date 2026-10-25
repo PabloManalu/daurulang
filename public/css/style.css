@@ -116,7 +116,7 @@ input:focus-visible, textarea:focus-visible { outline-offset: 1px; }
 }
 
 /* ---- Halaman baru ---- */
-.hero--sm { padding: clamp(3.5rem, 9vw, 6rem) 0 clamp(3.5rem, 8vw, 5.5rem); }
+.hero--sm { padding: clamp(3.5rem, 9vw, 6rem) 0 clamp(2rem, 5vw, 3rem); }
 .hero--sm h1 { font-size: clamp(2.2rem, 5.5vw, 3.8rem); max-width: 20ch; }
 .eyebrow { display: inline-block; font-weight: 600; font-size: .9rem; color: var(--accent-dark); background: var(--tint); border: 1px solid var(--line); border-radius: 999px; padding: .2rem .8rem; margin-bottom: 1rem; }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
