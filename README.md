@@ -1,59 +1,59 @@
 # Remade
 
-Website edukasi daur ulang sampah + prototipe toko kerajinan dari sampah. Mendukung SDG 3 (Kehidupan Sehat dan Sejahtera).
+Website edukasi dan toko online untuk memilah sampah dan membeli kerajinan tangan dari bahan bekas. Berisi panduan memilah sampah, edukasi dampak sampah, dashboard data sampah nasional 2024 (SIPSN), dan toko dengan keranjang serta form pesanan. Mendukung SDG 3: Kehidupan Sehat dan Sejahtera.
 
-Stack: HTML/CSS/JS biasa (`public/`), Vercel Serverless Functions (`api/`), Postgres di Neon.
+Teknologi: HTML, CSS, dan JavaScript statis di `public/`, API serverless di `api/` (Vercel), database Postgres (Neon).
 
-## Struktur
+## Cara instalasi
 
+Prasyarat: [Node.js](https://nodejs.org) versi 20 atau lebih baru dan Git.
+
+1. Unduh proyek:
+
+   ```bash
+   git clone <url-repositori>
+   cd <nama-folder>
+   ```
+
+2. Pasang dependensi:
+
+   ```bash
+   npm install
+   ```
+
+3. Buat file `.env` dari contoh:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+4. (Opsional) Isi `DATABASE_URL` di `.env` dengan connection string Postgres dari [Neon](https://neon.tech), lalu jalankan seluruh isi `db/schema.sql` sekali di SQL Editor Neon untuk membuat tabel dan data produk awal.
+
+   Tanpa langkah ini, program tetap berjalan dalam mode demo: produk memakai data contoh dan pesanan tidak disimpan.
+
+## Menjalankan program
+
+```bash
+npx vercel dev
 ```
-public/        halaman statis: index, edukasi, dashboard, toko (+ css, js, img)
-api/           products.js (GET produk), orders.js (POST pesanan)
-db/schema.sql  tabel + data awal produk
-vercel.json    konfigurasi Vercel
-```
 
-## Halaman
+Saat pertama kali, ikuti perintah login Vercel di terminal. Setelah berjalan, buka `http://localhost:3000`.
 
-- `/` beranda dan tab pilah sampah
-- `/edukasi` dampak buruk sampah, langkah dari rumah, mitos
-- `/dashboard` grafik data SIPSN 2024 (data ada di `public/js/dashboard.js`)
-- `/toko` katalog dan keranjang
+| Alamat | Isi |
+|---|---|
+| `/` | Beranda dan panduan memilah sampah |
+| `/edukasi` | Dampak sampah, langkah dari rumah, mitos |
+| `/dashboard` | Grafik data sampah nasional |
+| `/toko` | Katalog produk, keranjang, dan form pesanan |
+| `/api/products` | Daftar produk (JSON) |
 
-Tema: putih dan hijau, variabel warna di `:root` pada `public/css/style.css`.
+Hentikan program dengan `Ctrl+C`.
 
-## Coba cepat tanpa database
+## Cek hasil
 
-Tanpa `DATABASE_URL`, API otomatis pakai data contoh (mode demo): produk tampil, pesanan diterima tapi tidak disimpan.
+- Buka `/api/products`. Daftar produk harus muncul.
+- Di `/toko`, tambahkan produk ke keranjang lalu kirim pesanan. Dengan database aktif, pesanan tampil di Neon:
 
-```
-npm i -g vercel
-npm install
-vercel dev
-```
-
-## Deploy gratis ke Vercel
-
-1. Push folder ini ke repo GitHub.
-2. Buka vercel.com > Add New > Project > import repo. Biarkan Framework Preset "Other".
-3. Di tab Storage (atau Marketplace), pasang **Neon**. `DATABASE_URL` terisi otomatis.
-   Kalau pakai database lain, isi manual di Settings > Environment Variables.
-4. Buka SQL Editor di Neon, tempel isi `db/schema.sql`, lalu Run.
-5. Redeploy. Selesai.
-
-Lihat pesanan masuk: SQL Editor Neon, `SELECT * FROM orders ORDER BY created_at DESC;`
-
-## Mengganti foto produk
-
-Saat ini gambar produk adalah ilustrasi SVG sederhana di `public/img/`. Untuk foto asli:
-
-- Pakai foto karyamu sendiri, atau foto berlisensi bebas (Unsplash, Pexels, Pixabay). Cek lisensi dan beri kredit bila diminta.
-- Simpan di `public/img/`, lalu ubah kolom `image_url` di tabel `products`
-  (`UPDATE products SET image_url = '/img/tas.jpg' WHERE id = 1;`).
-- Ubah juga `api/_products.js` bila ingin mode demo ikut berubah.
-
-## Catatan
-
-- Hobby plan Vercel hanya untuk penggunaan non-komersial. Untuk jualan sungguhan, pertimbangkan plan berbayar.
-- Prototipe ini belum punya pembayaran dan halaman admin.
-- Harga pesanan dihitung ulang di server, jadi tidak bisa diubah dari browser.
+  ```sql
+  SELECT * FROM orders ORDER BY created_at DESC;
+  ```
